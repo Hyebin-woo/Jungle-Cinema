@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+//font-family: 'Noto Sans KR', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+//font-family: 'Roboto', sans-serif;
+
+//색상
+$bgColor: #fff;
+$gy_bgColor: #f2f2f2;
+$gy_Color: #bdbdbd;
+
+//폰트
+$base-font: "Noto Sans KR", sans-serif;
+$head-font: "Roboto", sans-serif;
+
+$font-size: 24px 22px 16px 14px 13px;
+
+@mixin center-fx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bg-img($ul, $size, $repeat, $positionX, $positionY) {
+  background-image: url($ul);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $positionX $positionY;
+}
+body {
+  background-color: $bgColor;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.box-center {
+  margin: 86px 60px 135px;
+  padding: 0 28px 30px;
+  background-color: $gy_bgColor;
+  border: 2px solid $gy_Color;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  @at-root.box-header {
+    text-align: center;
+    padding: 41px 28px;
+    font-family: $head-font;
+    .txt-tit {
+      font-size: nth($font-size, 1);
+      font-weight: 700;
+    }
+    .txt-tit::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: $gy_Color;
+      margin: 37px 0 28px;
+    }
+    .box-nav {
+      margin: 28px auto;
+    }
+  }
+}
