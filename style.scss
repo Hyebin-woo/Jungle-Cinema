@@ -1,22 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
-//font-family: 'Noto Sans KR', sans-serif;
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-//font-family: 'Roboto', sans-serif;
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 //색상
 $bgColor: #fff;
 $gy_bgColor: #f2f2f2;
 $gy_Color: #bdbdbd;
-
-//폰트
-$base-font: "Noto Sans KR", sans-serif;
-$head-font: "Roboto", sans-serif;
+$bk_Color: #000;
+$ch_Color: #828282;
+$gyb_Color: #4f4f4f;
 
 $font-size: 24px 22px 16px 14px 13px;
 
-@mixin center-fx {
+@mixin flex-between {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -26,15 +21,24 @@ $font-size: 24px 22px 16px 14px 13px;
   background-repeat: $repeat;
   background-position: $positionX $positionY;
 }
+@mixin btn-watch($width: 100%, $radius: 10px) {
+  width: $width;
+  border-radius: $radius;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+}
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 body {
   background-color: $bgColor;
-  max-width: 1920px;
-  margin: 0 auto;
 }
 
 .box-center {
-  margin: 86px 60px 135px;
-  padding: 0 28px 30px;
+  width: 1060px;
+  margin: 86px auto 135px;
+  padding: 0 29px 31px;
   background-color: $gy_bgColor;
   border: 2px solid $gy_Color;
   box-sizing: border-box;
@@ -43,20 +47,196 @@ body {
   @at-root.box-header {
     text-align: center;
     padding: 41px 28px;
-    font-family: $head-font;
-    .txt-tit {
+    .title {
       font-size: nth($font-size, 1);
       font-weight: 700;
     }
-    .txt-tit::after {
+    .title::after {
       content: "";
       display: block;
       height: 2px;
       background-color: $gy_Color;
       margin: 37px 0 28px;
     }
-    .box-nav {
+    @at-root.box-nav {
       margin: 28px auto;
+      .nav-link {
+        display: inline-block;
+        color: $bk_Color;
+        padding: 0 30px 0;
+        font-size: nth($font-size, 2);
+      }
+      .nav-link:hover {
+        color: $ch_Color;
+      }
+    }
+    @at-root .box-main {
+      max-width: 1003px;
+      background-color: $bgColor;
+      outline: 2px solid $gy_Color;
+      box-sizing: border-box;
+      border-radius: 15px;
+      padding: 26px 27px 30px;
+      @at-root.box-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        li {
+          background-color: $bgColor;
+          padding: 19px 20px 0;
+          outline: 1px solid $gy_Color;
+          box-sizing: border-box;
+          filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+          border-radius: 10px;
+        }
+        .img-movie {
+          width: 180px;
+          height: 250px;
+          border: 1px solid $gy_Color;
+          box-sizing: border-box;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          border-radius: 10px;
+        }
+        @at-root.box-info {
+          padding: 11px 0 18px;
+          .movie-title {
+            font-weight: 900;
+            font-size: nth($font-size, 3);
+            color: $bk_Color;
+            overflow: hidden;
+          }
+          .movie-info {
+            font-size: nth($font-size, 5);
+            margin: 12px 0 18px;
+            display: grid;
+            grid-template-columns: 1fr 65px 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            column-gap: 7px;
+            row-gap: 7px;
+
+            dt {
+              color: $ch_Color;
+            }
+            .tit-actor {
+              grid-column: 1/2;
+            }
+            .actor {
+              grid-column: 2/5;
+            }
+            .grade {
+              position: relative;
+              top: 0px;
+              left: 15px;
+            }
+
+            .grade::before {
+              content: url(./영화목록페이지/Star.svg) / "별표 이미지";
+              position: absolute;
+              top: -2px;
+              left: -17px;
+            }
+          }
+
+          .box-btn {
+            display: flex;
+            background-color: $gy_bgColor;
+            border-top: 1px solid $gy_Color;
+            margin: 19px -41px -18px -20px;
+            border-radius: 0 0 10px 10px;
+            box-sizing: border-box;
+            font-size: nth($font-size, 3);
+            font-weight: 500;
+          }
+
+          .btn {
+            text-align: center;
+            padding: 9px 0 12px;
+            box-sizing: border-box;
+            overflow: hidden;
+          }
+
+          .reserve {
+            //border-radius: 0 0 0 10px;
+            border-right: 1px solid $gy_Color;
+            //padding: 9px 12px 12px;
+          }
+          .preview {
+            position: relative;
+            margin-left: 10px;
+            //border-radius: 0 0 10px 0;
+            //padding: 9px 12px 12px;
+          }
+          .preview::before {
+            display: inline-block;
+            content: "";
+            background-image: url(./영화목록페이지/play.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 8px;
+            left: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $gy_bgColor;
+  padding: 53px 0 38px;
+
+  .footer-info {
+    margin: 0 auto;
+    max-width: 1120px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $ch_Color;
+    padding-bottom: 42px;
+
+    .footer-title {
+      display: inline-block;
+      font-size: nth($font-size, 2);
+      font-weight: 700;
+    }
+    .box-sns {
+      float: right;
+    }
+    .icon-sns {
+      width: 22px;
+      margin-left: 24px;
+    }
+  }
+  .company-info {
+    font-size: nth($font-size, 4);
+    color: $gyb_Color;
+    padding: 36px 0 38px;
+    margin: 0 auto;
+    max-width: 1120px;
+
+    dt {
+      font-weight: 700;
+    }
+    .slice {
+      position: relative;
+      margin-right: 8px;
+    }
+    .slice::after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 14px;
+      top: -1;
+      right: 0;
+      background-color: #000;
+      margin-right: -6px;
+    }
+    .copyright {
+      font-weight: 700;
+      float: right;
     }
   }
 }

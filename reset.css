@@ -152,3 +152,9 @@ button {
 a {
   text-decoration: none;
 }
+
+dl,
+dt,
+dd {
+  display: inline-block;
+}

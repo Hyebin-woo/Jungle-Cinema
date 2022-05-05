@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 body {
   background-color: #fff;
-  max-width: 1920px;
-  margin: 0 auto;
 }
 
 .box-center {
-  margin: 86px 60px 135px;
-  padding: 0 28px 30px;
+  width: 1060px;
+  margin: 86px auto 135px;
+  padding: 0 29px 31px;
   background-color: #f2f2f2;
   border: 2px solid #bdbdbd;
   box-sizing: border-box;
@@ -18,15 +21,14 @@ body {
 .box-header {
   text-align: center;
   padding: 41px 28px;
-  font-family: "Roboto", sans-serif;
 }
 
-.box-header .txt-tit {
+.box-header .title {
   font-size: 24px;
   font-weight: 700;
 }
 
-.box-header .txt-tit::after {
+.box-header .title::after {
   content: "";
   display: block;
   height: 2px;
@@ -34,7 +36,199 @@ body {
   margin: 37px 0 28px;
 }
 
-.box-header .box-nav {
+.box-nav {
   margin: 28px auto;
+}
+
+.box-nav .nav-link {
+  display: inline-block;
+  color: #000;
+  padding: 0 30px 0;
+  font-size: 22px;
+}
+
+.box-nav .nav-link:hover {
+  color: #828282;
+}
+
+.box-main {
+  max-width: 1003px;
+  background-color: #fff;
+  outline: 2px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 26px 27px 30px;
+}
+
+.box-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.box-list li {
+  background-color: #fff;
+  padding: 19px 20px 0;
+  outline: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+  border-radius: 10px;
+}
+
+.box-list .img-movie {
+  width: 180px;
+  height: 250px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+}
+
+.box-info {
+  padding: 11px 0 18px;
+}
+
+.box-info .movie-title {
+  font-weight: 900;
+  font-size: 16px;
+  color: #000;
+  overflow: hidden;
+}
+
+.box-info .movie-info {
+  font-size: 13px;
+  margin: 12px 0 18px;
+  display: grid;
+  grid-template-columns: 1fr 65px 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 7px;
+  row-gap: 7px;
+}
+
+.box-info .movie-info dt {
+  color: #828282;
+}
+
+.box-info .movie-info .tit-actor {
+  grid-column: 1/2;
+}
+
+.box-info .movie-info .actor {
+  grid-column: 2/5;
+}
+
+.box-info .movie-info .grade {
+  position: relative;
+  top: 0px;
+  left: 15px;
+}
+
+.box-info .movie-info .grade::before {
+  content: url(./영화목록페이지/Star.svg)/"별표 이미지";
+  position: absolute;
+  top: -2px;
+  left: -17px;
+}
+
+.box-info .box-btn {
+  display: flex;
+  background-color: #f2f2f2;
+  border-top: 1px solid #bdbdbd;
+  margin: 19px -41px -18px -20px;
+  border-radius: 0 0 10px 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.box-info .btn {
+  text-align: center;
+  width: 50%;
+  padding: 9px 0 12px;
+  box-sizing: border-box;
+}
+
+.box-info .reserve {
+  border-right: 1px solid #bdbdbd;
+}
+
+.box-info .preview {
+  position: relative;
+  margin-left: 10px;
+}
+
+.box-info .preview::before {
+  display: inline-block;
+  content: "";
+  background-image: url(./영화목록페이지/play.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  left: 12px;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 53px 0 38px;
+}
+
+.footer .footer-info {
+  margin: 0 auto;
+  max-width: 1120px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #828282;
+  padding-bottom: 42px;
+}
+
+.footer .footer-info .footer-title {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer .footer-info .box-sns {
+  float: right;
+}
+
+.footer .footer-info .icon-sns {
+  width: 22px;
+  margin-left: 24px;
+}
+
+.footer .company-info {
+  font-size: 14px;
+  color: #4f4f4f;
+  padding: 36px 0 38px;
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.footer .company-info dt {
+  font-weight: 700;
+}
+
+.footer .company-info .slice {
+  position: relative;
+  margin-right: 8px;
+}
+
+.footer .company-info .slice::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 14px;
+  top: -1;
+  right: 0;
+  background-color: #000;
+  margin-right: -6px;
+}
+
+.footer .company-info .copyright {
+  font-weight: 700;
+  float: right;
 }
 /*# sourceMappingURL=style.css.map */
