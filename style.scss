@@ -9,9 +9,9 @@ $gyb_Color: #4f4f4f;
 
 $font-size: 24px 22px 16px 14px 13px;
 
-@mixin flex-between {
+@mixin flex-center {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -47,6 +47,7 @@ body {
   @at-root.box-header {
     text-align: center;
     padding: 41px 28px;
+    font-family: "Noto Sans KR", sans-serif;
     .title {
       font-size: nth($font-size, 1);
       font-weight: 700;
@@ -89,6 +90,7 @@ body {
           box-sizing: border-box;
           filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
           border-radius: 10px;
+          overflow: hidden;
         }
         .img-movie {
           width: 180px;
@@ -139,33 +141,25 @@ body {
           }
 
           .box-btn {
-            display: flex;
+            @include flex-center;
+            margin: 0 -40px -18px;
+            border-radius: 0 0 10px 10px;
+            font-size: nth($font-size, 4);
+            font-weight: 500;
             background-color: $gy_bgColor;
             border-top: 1px solid $gy_Color;
-            margin: 19px -41px -18px -20px;
-            border-radius: 0 0 10px 10px;
-            box-sizing: border-box;
-            font-size: nth($font-size, 3);
-            font-weight: 500;
-          }
-
-          .btn {
-            text-align: center;
-            padding: 9px 0 12px;
-            box-sizing: border-box;
-            overflow: hidden;
           }
 
           .reserve {
-            //border-radius: 0 0 0 10px;
             border-right: 1px solid $gy_Color;
-            //padding: 9px 12px 12px;
+            padding: 9px 21px 12px;
+            margin-right: 10px;
           }
           .preview {
             position: relative;
+            // margin-left: 10px;
+            padding: 9px 15px 12px;
             margin-left: 10px;
-            //border-radius: 0 0 10px 0;
-            //padding: 9px 12px 12px;
           }
           .preview::before {
             display: inline-block;
@@ -177,8 +171,8 @@ body {
             position: absolute;
             width: 16px;
             height: 16px;
-            top: 8px;
-            left: 12px;
+            top: 9px;
+            left: -3px;
           }
         }
       }

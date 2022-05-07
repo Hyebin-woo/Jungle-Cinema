@@ -21,6 +21,7 @@ body {
 .box-header {
   text-align: center;
   padding: 41px 28px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .box-header .title {
@@ -73,6 +74,7 @@ body {
   box-sizing: border-box;
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .box-list .img-movie {
@@ -132,28 +134,25 @@ body {
 
 .box-info .box-btn {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 -40px -18px;
+  border-radius: 0 0 10px 10px;
+  font-size: 14px;
+  font-weight: 500;
   background-color: #f2f2f2;
   border-top: 1px solid #bdbdbd;
-  margin: 19px -41px -18px -20px;
-  border-radius: 0 0 10px 10px;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.box-info .btn {
-  text-align: center;
-  width: 50%;
-  padding: 9px 0 12px;
-  box-sizing: border-box;
 }
 
 .box-info .reserve {
   border-right: 1px solid #bdbdbd;
+  padding: 9px 21px 12px;
+  margin-right: 10px;
 }
 
 .box-info .preview {
   position: relative;
+  padding: 9px 15px 12px;
   margin-left: 10px;
 }
 
@@ -167,8 +166,8 @@ body {
   position: absolute;
   width: 16px;
   height: 16px;
-  top: 8px;
-  left: 12px;
+  top: 9px;
+  left: -3px;
 }
 
 .footer {
