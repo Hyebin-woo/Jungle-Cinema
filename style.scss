@@ -21,12 +21,6 @@ $font-size: 24px 22px 16px 14px 13px;
   background-repeat: $repeat;
   background-position: $positionX $positionY;
 }
-@mixin btn-watch($width: 100%, $radius: 10px) {
-  width: $width;
-  border-radius: $radius;
-  background-color: #f2f2f2;
-  box-sizing: border-box;
-}
 * {
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -152,7 +146,7 @@ body {
 
           .reserve {
             border-right: 1px solid $gy_Color;
-            padding: 9px 21px 12px;
+            padding: 9px 24px 12px;
             margin-right: 10px;
           }
           .preview {
